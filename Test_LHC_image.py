@@ -15,12 +15,9 @@ np.random.seed(0)
 img_path = 'Test_Data/Images1.jpeg'
 img = load_img(img_path, target_size=(224, 224)) 
  
-
 x = img_to_array(img)
 x = np.expand_dims(x, axis=0)
 x = preprocess_input(x)
-
-
 
 
 # MODEL IMPORT
@@ -35,7 +32,6 @@ model = LHC_ResNet34(input_shape=(224, 224, 3), num_classes=7, att_params=Params
 x0 = np.ones(shape=(10, 224, 224, 3), dtype='float32')
 y0 = model(x0)
 model.load_weights('Downloaded_Models/LHC_NetC/LHC_Net_Controller')
-
 
 
 #Results
@@ -67,9 +63,9 @@ print('Probability : ', max)
 
 
 
-
 # RESET
 for element in dir():
     if element[0:2] != "__":
         del globals()[element]
 del element
+
