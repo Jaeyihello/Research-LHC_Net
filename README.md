@@ -49,3 +49,10 @@ Ore equivalently:
 python main_downloaded.py
 ```
 
+## User 이미지로 성능 확인하기
+이 모델에는 User가 가진 이미지로 classification을 확인하는 코드가 포함되어 있지 않다... 그래서 내가 만들었다...<br />
+```
+python Test_LHC.py
+```
+
+
