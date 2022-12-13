@@ -1,6 +1,10 @@
 # LHC-Net
 ## Local Multi-Head Channel Self-Attention
 
+최근 연구를 위한 FER SOTA 논문 중 첫번재로 LHC-Net에 대한 실험을 진행하게 되었다. 이 논문은 원래 FER2013 데이터에 대해 표정을 인식하는 알고리즘인데, 나는 Youtube 오픈소스에서 볼 수 있는 데이터셋을 활용해서 실생활에서의 정확도를 확인중이다. 
+
+이 repository에는 원래 모델의 source에 paper review, local 데이터를 추가해서 돌려본 정보등이 포함된다. 
+
 This repository is intended to provide a quick implementation of the LHC-Net and to replicate the results in this [paper](https://arxiv.org/abs/2111.07224) on FER2013 by downloading our trained models or, in case of hardware compatibility, by training the models from scratch. A fully custom training routine is also available.
 
 ![Image of LHC_Net](https://github.com/Bodhis4ttva/LHC_Net/blob/main/Images/LHC_Net.jpg)
@@ -45,31 +49,3 @@ Ore equivalently:
 python main_downloaded.py
 ```
 
-## How to train and evaluate your own LHC-Net on FER2013 in the "standalone" mode
-To train an LHC-Net using a generically imagenet pre-trained ResNet backbone edit the configuration files in the *Settings* folder and execute the following commands in your terminal:<br />
-```
-python Download_Data.py
-python ETL.py
-python LHC_Net_Train.py
-python LHC_Net_Eval.py
-```
-Ore equivalently:
-```
-python main_standalone.py
-```
-
-## How to train and evalueate LHC-Net on FER2013 in our "modular" mode and replicate our results
-If the replicability check gave a positive result you could replicate our results by integrating and training the LHC modules on a ResNet backbone already trained on FER2013, according with our first experimental protocol. To do that execute the following commands in your terminal:
-```
-python Download_Data.py
-python ETL.py
-python ResNet34_Train.py
-python LHC_Train.py
-python Controller_Train.py
-python LHC_Eval.py
-python Controller_Eval.py
-```
-Ore equivalently:
-```
-python main_modular.py
-```
