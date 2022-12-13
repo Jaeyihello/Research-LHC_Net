@@ -52,7 +52,14 @@ python main_downloaded.py
 ## User 이미지로 성능 확인하기
 이 모델에는 User가 가진 이미지로 classification을 확인하는 코드가 포함되어 있지 않다... 그래서 내가 만들었다...<br />
 ```
-python Test_LHC.py
+Data_making.py
+python Test_LHC_video.py
 ```
 
+Data_making 에서는 비디오를 입력 받아서 정중앙을 기준으로 (225,225) 사이즈로 이미지를 캡쳐한 뒤 이를 지정된 폴더에 저장한다.
+비디오 명, 폴더 명, 파일 경로는 모두 알아서 바꿔주어야 한다.
+
+Test_LHC_video 에서는 User의 이미지를 입력받아서 LHC 모델을 통해 emotion을 classify 한다.
+나는 여러장의 이미지를 하나의 폴더에 놓고 전체에 대해 모델을 돌려보는 식으로 구현했다.
+여러장의 이미지 각각에 대한 결과값으로 확률과 emotion을 반환하며, 이를 모아 csv 파일로 저장하는 코드까지 들어가있다. 
 
